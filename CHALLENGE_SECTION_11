@@ -1,0 +1,143 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void Print_numbers (vector<int> , int);
+void Add_numbers (vector<int> , int);
+void Mean_numbers (vector<int> , int);
+void Smallest_numbers (vector<int> , int);
+void Largest_numbers (vector<int> , int);
+
+
+int main()
+{
+    char action_character;
+    char input_numbers;
+    int number_count;
+    vector<int> numbers;
+    input_numbers = 'y';
+    number_count = 0;
+     cout << " ENTER LIST OF NUMBERS : " << endl;
+    while(input_numbers == 'y')
+    {
+        int entered_number;
+        cin >> entered_number;
+        numbers.push_back(entered_number);
+
+        number_count++;
+
+        cout << "TO PROCEED PRESS [y] , TO CANCEL PRESS [n]";
+        cin >> input_numbers;
+    }
+
+    number_count--;
+
+    cout << "ENTER THE OPERATION NEEDED : ";
+    cin >> action_character;
+
+    switch (action_character)
+    {
+        case 'p' : Print_numbers(numbers , number_count);
+
+        break;
+
+        case 'P' : Print_numbers(numbers , number_count);
+
+        break;
+
+        case 'A' : Add_numbers (numbers , number_count);
+
+        break;
+
+        case 'a' : Add_numbers(numbers ,number_count);
+
+        break;
+
+        case 'M' : Mean_numbers(numbers , number_count);
+
+        break;
+
+        case 'm' : Mean_numbers(numbers , number_count);
+
+        break;
+
+        case  'S' : Smallest_numbers(numbers , number_count);
+
+        break;
+
+        case 's' : Smallest_numbers(numbers ,number_count);
+
+        break;
+        
+        case 'L' : Largest_numbers (numbers , number_count);
+
+        break;
+
+        case 'l' : Largest_numbers (numbers , number_count);
+
+        break;
+
+        case 'Q' : cout << "THE PROGRAM IS TERMINATED";
+
+        break;
+
+        case 'q' : cout  << "THE PROGRAM IS TERMINATED";
+    }
+}
+
+void Print_numbers (vector<int> numbers , int number_count)
+{
+    for (int i = 0 ; i < number_count ; i++)
+    cout << numbers[i] << " ";
+}
+
+void Add_numbers (vector<int> numbers , int number_count)
+{
+       int sum;
+            sum = 0;
+            for (int i = 0 ; i< number_count ; i++)
+            {
+                sum += numbers[i];
+            }
+
+            cout << sum;
+}
+
+void Mean_numbers (vector<int> numbers , int number_count)
+{
+    int sum;
+        sum = 0;
+
+        for (int i = 0 ; i < number_count ; i++)
+        {
+            sum = numbers[i];
+        }
+
+        cout << (double)sum / number_count;
+}
+
+void Smallest_numbers (vector<int> numbers , int number_count)
+{
+     int smallest ;
+        smallest = numbers[0];
+        for (int i = 1 ; i < number_count ; i++)
+        {
+            if (smallest > numbers[i])
+            smallest = numbers[i];
+        }
+
+        cout << smallest;
+}
+
+void Largest_numbers (vector<int> numbers , int number_count)
+{
+    int largest;
+        largest = numbers[0];
+        for(int i = 1 ; i < number_count ; i++)
+        {
+            if(largest < numbers[i])
+            largest = numbers[i];
+        }
+
+        cout << largest;
+}
