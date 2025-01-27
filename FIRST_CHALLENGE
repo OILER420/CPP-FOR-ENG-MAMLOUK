@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int fav_num;
+    cout << "ENTER YOUR FAVOURITE NUMBER : ";
+    cin >> fav_num;
+    cout << "AMAZING!!! THAT'S MY FAVOURITE NUMBER TOO." << endl;
+    cout << "NO REALLY!, 24 IS MY FAVOURITE NUMBER TOO.";
+    return 0;
+}
