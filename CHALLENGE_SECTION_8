@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int cents;
+    cout << "ENTER THE AMOUNT OF CENTS : ";
+    cin >> cents;
+    cout << "dollars : " << cents/100 << endl;
+    cout << "quarters : " << cents%100/25 << endl;
+    cout << "dimes : " << cents%100%25/10 << endl;
+    cout << "nickel : " << cents%100%25%10/5 << endl;
+    cout << "pennies : " << cents%100%25%10%5 << endl;
+
+    return 0 ;
+
+}
