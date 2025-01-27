@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string message , encrypted_message , decrypted_message;
+    size_t position;
+    string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string key = "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdqvtkfuompciasr";
+    cout << "ENTER THE MESSAGE : ";
+    getline(cin , message);
+
+    for (char ch : message)
+    {
+        position = alphabet.find(ch);
+
+        if (position != string::npos)
+        {
+            char new_ch = key.at(position);
+            encrypted_message.push_back(new_ch);
+        }
+
+        else
+        {
+            encrypted_message.push_back(ch);
+        }
+    }
+
+    cout << "THE ENCRYPTED MESSAGE IS : " << encrypted_message << endl;
+
+    for (char ch : encrypted_message)
+    {
+        position = key.find(ch);
+        if (position != string::npos)
+        {
+            char new_ch = alphabet.at(position);
+            decrypted_message.push_back(new_ch);
+        }
+
+        else
+        {
+            decrypted_message.push_back(ch);
+        }
+    }
+
+    cout << "THE DECRYPTED MESSAGE IS : " << decrypted_message;
+
+    return 0;
+    
+}
