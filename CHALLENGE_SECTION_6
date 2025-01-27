@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int small_rooms , large_rooms;
+    double tax;
+    cout << "ESTIMATE FOR CARPET CLEANING SERVICE " << endl;
+    cout << "NUMBER OF SMALL ROOMS : ";
+    cin >> small_rooms;
+    cout << "NUMBER OF LARGE ROOMS : ";
+    cin >> large_rooms;
+    cout << "PRICE PER SMALL ROOM : 25" << endl;
+    cout << "PRICE PER LARGE ROOM : 35" << endl;
+    cout << "COST : " << small_rooms*25 + large_rooms*35 << endl;
+    tax = (small_rooms*25 + large_rooms*35)*0.06;
+    cout << "TAX : " << tax << endl;
+    cout << "====================================="<<endl;
+    cout << "TOTAL ESTIMATE : " << tax + (small_rooms*25 + large_rooms*35) << endl;
+    cout << "THIS IS VALID FOR 30 DAYS";
+
+    return 0;
+}
