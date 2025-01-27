@@ -1,0 +1,88 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    char action_character;
+    char input_numbers;
+    int number_count;
+    vector<int> numbers;
+    input_numbers = 'y';
+    number_count = 0;
+    cout << " ENTER LIST OF NUMBERS : " << endl;
+    while(input_numbers == 'y')
+    {
+        int entered_number;
+        cin >> entered_number;
+        numbers.push_back(entered_number);
+
+        number_count++;
+
+        cout << "TO PROCEED PRESS [y] , TO CANCEL PRESS [n]";
+        cin >> input_numbers;
+    }
+
+    cout << "ENTER THE OPERATION NEEDED : ";
+    cin >> action_character;
+
+    if (action_character == 'p' || action_character == 'P')
+    for (int i = 0 ; i < number_count ; i++)
+    cout << numbers[i] << " ";
+
+    else if (action_character == 'a' || action_character == 'A')
+    {
+            int sum;
+            sum = 0;
+            for (int i = 0 ; i< number_count ; i++)
+            {
+                sum += numbers[i];
+            }
+
+            cout << sum;
+    }
+
+    else if (action_character == 'm' || action_character == 'M')
+    {
+        int sum;
+        sum = 0;
+
+        for (int i = 0 ; i < number_count ; i++)
+        {
+            sum = numbers[i];
+        }
+
+        cout << sum / number_count;
+    }
+
+    else if (action_character == 's' || action_character == 'S')
+    {
+        int smallest ;
+        smallest = numbers[0];
+        for (int i = 1 ; i < number_count ; i++)
+        {
+            if (smallest > numbers[i])
+            smallest = numbers[i];
+        }
+
+        cout << smallest;
+    }
+
+    else if (action_character == 'l' || action_character == 'L')
+    {
+        int largest;
+        largest = numbers[0];
+        for(int i = 1 ; i < number_count ; i++)
+        {
+            if(largest < numbers[i])
+            largest = numbers[i];
+        }
+
+        cout << largest;
+    }
+
+    else if (action_character == 'q' || action_character == 'Q')
+            cout << "THE PROGRAM IS TERMINATED";
+
+    return 0;        
+
+}
